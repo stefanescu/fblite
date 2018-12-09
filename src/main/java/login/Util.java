@@ -2,6 +2,8 @@ package login;
 
 import javafx.scene.control.Alert;
 
+import java.util.Base64;
+
 public class Util
 {
     public static void print(String s)
@@ -56,5 +58,16 @@ public class Util
         alert.showAndWait();
     }
 
+
+    public static String b64Encode(String s) {
+        byte[] bytesEncoded = Base64.getEncoder().encode(s.getBytes());
+        return new String(bytesEncoded);
+    }
+
+
+    public static String b64Decode(String s) {
+        byte[] bytesEncoded = Base64.getDecoder().decode(s.getBytes());
+        return new String(bytesEncoded);
+    }
 
 }
