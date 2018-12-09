@@ -41,7 +41,7 @@
                      </children></AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
-                        <ListView layoutX="14.0" layoutY="35.0" prefHeight="305.0" prefWidth="495.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
+                        <ListView fx:id="postList" layoutX="14.0" layoutY="35.0" prefHeight="305.0" prefWidth="495.0" stylesheets="@postList.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
                         <CheckBox layoutX="461.0" layoutY="15.0" mnemonicParsing="false" text="Hide all" AnchorPane.bottomAnchor="310.0" AnchorPane.rightAnchor="63.0" />
                         <Label layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="70.0" text="Your posts" AnchorPane.bottomAnchor="310.0" />
                         <Button layoutX="534.0" layoutY="11.0" mnemonicParsing="false" text="add" AnchorPane.bottomAnchor="307.0" AnchorPane.rightAnchor="14.0" />
@@ -62,7 +62,7 @@
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
-                        <ListView fx:id="friendsList" layoutX="56.0" layoutY="85.0" prefHeight="519.0" prefWidth="293.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ListView fx:id="friendsList" layoutX="56.0" layoutY="85.0" prefHeight="519.0" prefWidth="293.0" stylesheets="@postList.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
               </items>

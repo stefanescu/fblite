@@ -22,9 +22,12 @@ public class SceneManager {
      * Will show the main application screen.
      */
     public void authenticated(String sessionID) {
-        showMainView(sessionID);
+        showMainView(sessionID, null);
     }
 
+    public void checkOtherProfile(String sessionID, String otherUserID) {
+        showMainView(sessionID, otherUserID);
+    }
     /**
      * Callback method invoked to notify that a user has logged out of the main application.
      * Will show the login application screen.
@@ -48,16 +51,17 @@ public class SceneManager {
         }
     }
 
-    private void showMainView(String sessionID) {
+    private void showMainView(String sessionID, String otherUserID) {
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("/main_screen.fxml")
 //                    getClass().getResource("/mainview.fxml")
             );
             scene.setRoot((Parent) loader.load());
+
             MainViewController controller =
                     loader.<MainViewController>getController();
-            controller.initSessionID(this, sessionID);
+            controller.initSessionID(this, sessionID, otherUserID);
         } catch (Exception ex) {
             Logger.getLogger(SceneManager.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class LoginDemoApplication extends Application {
     public static void main(String[] args) { launch(args); }
     @Override public void start(Stage stage) throws IOException {
-        Scene scene = new Scene(new StackPane());
+        Scene scene = new Scene(new StackPane(), 1000, 600);
 
         SceneManager sceneManager = new SceneManager(scene);
         sceneManager.showLoginScreen();

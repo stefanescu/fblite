@@ -1,5 +1,7 @@
 package login;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -188,19 +190,60 @@ public class MainViewController {
 
     }
 
-    public void initSessionID(final SceneManager sceneManager, String sessionID) {
+    public void initSessionID(final SceneManager sceneManager, String sessionID, String newSessionId) {
 //        sessionLabel.setText(sessionID);
         this.sessionID = sessionID;
-        currentProfile = personDAO.get(new ObjectId(sessionID));
+        if (newSessionId == null)
+            currentProfile = personDAO.get(new ObjectId(sessionID));
+        else
+            currentProfile = personDAO.get(new ObjectId(newSessionId));
+
         fullNameText.setText(currentProfile.getFirstName() + " " + currentProfile.getLastName());
         userText.setText(currentProfile.getUsername());
         dobText.setText(currentProfile.getDob());
         statusText.setText(currentProfile.getStatus());
+
+        ArrayList<Person> a = currentProfile.getFriends();
+        for (Person p : a) {
+            friendsList.getItems().add(p.getFirstName() + " " + p.getLastName());
+        }
+
 
         logoutButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent event) {
                 sceneManager.logout();
             }
         });
+
+        homeButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent event) {
+                sceneManager.checkOtherProfile(sessionID, null);
+            }
+        });
+
+        friendsList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+                if (newValue != null) {
+                    final Query<Person> query = personDAO.getDatastore().createQuery(Person.class);
+                    final List<Person> persons = query.asList();
+
+                    String[] fullName = newValue.toString().split(" ");
+                    List<Person> p = conn.getDatastore().createQuery(Person.class).field("firstName").equal(fullName[0]).asList();
+
+                    String otherPersonId = null;
+                    for (Person f : p) {
+                        if (f.getLastName().equals(fullName[1])) {
+                            otherPersonId = f.getId();
+                            break;
+                        }
+                    }
+
+                    sceneManager.checkOtherProfile(sessionID, otherPersonId);
+                }
+            }
+        });
+
+
     }
 }
