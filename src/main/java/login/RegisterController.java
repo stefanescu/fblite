@@ -72,7 +72,7 @@ public class RegisterController {
                 }
 
 
-                createAccount(new Person(fn, ln, date, usr, pass));
+                createAccount(new Person(fn, ln, date, usr, Util.b64Encode(pass)));
                 sceneManager.showLoginScreen();
 //                sceneManager.logout();
             }

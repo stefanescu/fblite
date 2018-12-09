@@ -69,7 +69,7 @@ public class LoginController {
                 }
 
                 Person usr = p.get(0);
-                usr.setPassword("pass");
+                usr.setPassword(Util.b64Encode("pass"));
 
                 personDAO.save(usr);
 
@@ -100,7 +100,7 @@ public class LoginController {
             return null;
 
         Person pp = p.get(0);
-        if (pp.getPassword().equals(pw)) {
+        if (Util.b64Decode(pp.getPassword()).equals(pw)) {
             return pp.getId().toString();
         }
 
