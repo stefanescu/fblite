@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.RegisterController">
+   <children>
+      <Label alignment="CENTER" layoutX="154.0" layoutY="115.0" text="username" />
+      <TextField alignment="CENTER" layoutX="291.0" layoutY="111.0" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="180.0" layoutY="270.0" mnemonicParsing="false" prefHeight="3.0" prefWidth="130.0" text="Reset password" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="270.0" mnemonicParsing="false" prefHeight="3.0" prefWidth="130.0" text="Cancel" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Button>
+      <Label alignment="CENTER" layoutX="154.0" layoutY="143.0" text="new password" />
+      <Label alignment="CENTER" layoutX="154.0" layoutY="179.0" text="confirm new password" />
+      <PasswordField layoutX="291.0" layoutY="145.0" />
+      <PasswordField layoutX="291.0" layoutY="175.0" />
+   </children>
+</Pane>
