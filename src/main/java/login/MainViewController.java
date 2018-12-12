@@ -240,6 +240,15 @@ public class MainViewController {
                 CheckBox hideDob = new CheckBox("Hide Date of Birth");
                 hideDob.setSelected(currentProfile.getDOBHidden());
 
+                CheckBox hideStatus = new CheckBox("Hide Status");
+                hideDob.setSelected(currentProfile.getStatusHidden());
+
+                CheckBox hidePosts = new CheckBox("Hide Posts");
+                hideDob.setSelected(currentProfile.getPostsHidden());
+
+                CheckBox hideFriends = new CheckBox("Hide Friends");
+                hideDob.setSelected(currentProfile.getFriendsHidden());
+
 
                 grid.add(new Label("First Name:"), 0, 0);
                 grid.add(fName, 1, 0);
@@ -247,7 +256,10 @@ public class MainViewController {
                 grid.add(lName, 1, 1);
                 grid.add(new Label("Date of Birth:"), 0, 2);
                 grid.add(dob, 1, 2);
-                grid.add(hideDob, 2, 2);
+                grid.add(hideDob, 1, 3);
+                grid.add(hideStatus, 1, 4);
+                grid.add(hidePosts, 1, 5);
+                grid.add(hideFriends, 1, 6);
 
 
 
@@ -273,6 +285,9 @@ public class MainViewController {
                         a.add(lName.getText());
                         a.add(dob.getText());
                         a.add(hideDob.isSelected());
+                        a.add(hideStatus.isSelected());
+                        a.add(hideFriends.isSelected());
+                        a.add(hidePosts.isSelected());
 
                         return a;
 //                        return new ArrayList<String>(fName.getText(), lName.getText());
@@ -290,6 +305,9 @@ public class MainViewController {
                     currentProfile.setLastName(a.get(1).toString());
                     currentProfile.setDob(a.get(2).toString());
                     currentProfile.setDOBHidden((Boolean) a.get(3));
+                    currentProfile.setStatusHidden((Boolean) a.get(4));
+                    currentProfile.setFriendsHidden((Boolean) a.get(5));
+                    currentProfile.setPostsHidden((Boolean) a.get(6));
 
                     personDAO.save(currentProfile);
 
@@ -313,9 +331,10 @@ public class MainViewController {
         this.sessionID = sessionID;
         if (newSessionId == null)
             currentProfile = personDAO.get(new ObjectId(sessionID));
-        else
+        else {
             currentProfile = personDAO.get(new ObjectId(newSessionId));
-
+            hideAsRequested();
+        }
         removeFriendButton.setVisible(false);
         fullNameText.setText(currentProfile.getFirstName() + " " + currentProfile.getLastName());
         userText.setText(currentProfile.getUsername());
@@ -369,6 +388,7 @@ public class MainViewController {
 
 
         if (!currentProfile.getId().equals(sessionID)) {
+            optionsButton.setVisible(false);
             removeFriendButton.setVisible(true);
             logoutButton.setVisible(false);
             editStatus.setVisible(false);
@@ -376,5 +396,19 @@ public class MainViewController {
             addFriendButton.setVisible(false);
             addPostButton.setVisible(false);
         }
+    }
+
+    private void hideAsRequested() {
+        if (currentProfile.getDOBHidden())
+            dobText.setVisible(false);
+
+        if (currentProfile.getStatusHidden())
+            statusText.setVisible(false);
+
+        if (currentProfile.getFriendsHidden())
+            friendsList.getItems().removeAll();
+
+        if (currentProfile.getPostsHidden())
+            postList.getItems().removeAll();
     }
 }

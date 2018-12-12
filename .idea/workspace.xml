@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jfoenix_jfoenix_8_0_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/animation/animation/AnimationPack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/animation/animation/AnimationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/animation/control/cell/AbstractAnimatedListCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/animation/control/cell/AnimatedListCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/animation/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/animation/fonts/segoesc.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/animation/img/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/animation/img/gloss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/animation/img/wooden.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/animation/img/wooden2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/prettyParts/PrettyListView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/PrettyListVIew.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logintest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/logintest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/login/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/login/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/login/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/models/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/main_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main_screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/postList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/postList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/login/MainViewController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login/MainViewController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/login/MainViewController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login/MainViewController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/login/MainViewController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login/MainViewController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/login/MainViewController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login/MainViewController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/login/MainViewController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login/MainViewController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/login/MainViewController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login/MainViewController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/login/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login/MainViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/login/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login/models/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main_screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/postList.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/postList.css" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -123,14 +93,14 @@
           <entry key="css" value="119" />
           <entry key="dummy" value="12" />
           <entry key="fxml" value="44" />
-          <entry key="java" value="7894" />
+          <entry key="java" value="8283" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="119" />
-          <entry key="JAVA" value="7894" />
+          <entry key="JAVA" value="8283" />
           <entry key="PLAIN_TEXT" value="12" />
           <entry key="XML" value="49" />
         </counts>
@@ -144,12 +114,12 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/main_screen.fxml">
-          <provider editor-type-id="text-editor">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="93">
               <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -169,15 +139,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/login/MainViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="185" column="57" selection-start-line="185" selection-start-column="57" selection-end-line="185" selection-end-column="57" />
+            <state relative-caret-position="445">
+              <caret line="319" column="5" lean-forward="true" selection-start-line="319" selection-start-column="5" selection-end-line="319" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#11551#11552#0" expanded="true" />
-                <element signature="e#11604#11605#0" expanded="true" />
-                <element signature="e#11744#11745#0" expanded="true" />
-                <element signature="e#11823#11824#0" expanded="true" />
+                <element signature="e#13589#13590#0" expanded="true" />
+                <element signature="e#13642#13643#0" expanded="true" />
+                <element signature="e#13782#13783#0" expanded="true" />
+                <element signature="e#13861#13862#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -195,22 +174,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/login/DAO/PostDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/login/models/Person.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="207" column="21" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
+            <state relative-caret-position="149">
+              <caret line="150" column="31" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1778#1779#0" expanded="true" />
@@ -218,11 +185,6 @@
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="mongo://null/fblite/Person">
-          <provider selected="true" editor-type-id="MongoData" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -271,9 +233,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>image</find>
-      <find>getid</find>
-      <find>riendslist</find>
       <find>riendsList</find>
       <find>scene</find>
       <find>new scene</find>
@@ -301,6 +260,9 @@
       <find>postlist</find>
       <find>addfriendbutt</find>
       <find>removefriend</find>
+      <find>hideAsRequested</find>
+      <find>hidden</find>
+      <find>optionsbutto</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -435,6 +397,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="logintest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logintest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="logintest" type="b2602c69:ProjectViewProjectNode" />
@@ -621,13 +591,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46111000" />
+    <option name="totallyTimeSpent" value="46660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21709532" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21709532" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -637,7 +607,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.097613886" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.6409836" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.15409836" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.15409836" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -649,7 +619,7 @@
       <window_info anchor="bottom" id="Event Log" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.2494577" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="15" weight="0.159436" />
+      <window_info anchor="bottom" id="Terminal" order="15" visible="true" weight="0.13606557" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -658,7 +628,7 @@
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Mongo Explorer" order="8" visible="true" weight="0.18910742" />
+      <window_info anchor="right" id="Mongo Explorer" order="8" visible="true" weight="0.08774584" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
@@ -889,8 +859,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+        <state relative-caret-position="234">
+          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -943,14 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/main_screen.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/login/models/Post.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
@@ -961,10 +923,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/main_screen.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/login/models/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="207" column="21" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
+        <state relative-caret-position="149">
+          <caret line="150" column="31" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1778#1779#0" expanded="true" />
@@ -975,14 +945,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/login/MainViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="185" column="57" selection-start-line="185" selection-start-column="57" selection-end-line="185" selection-end-column="57" />
+        <state relative-caret-position="445">
+          <caret line="319" column="5" lean-forward="true" selection-start-line="319" selection-start-column="5" selection-end-line="319" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#11551#11552#0" expanded="true" />
-            <element signature="e#11604#11605#0" expanded="true" />
-            <element signature="e#11744#11745#0" expanded="true" />
-            <element signature="e#11823#11824#0" expanded="true" />
+            <element signature="e#13589#13590#0" expanded="true" />
+            <element signature="e#13642#13643#0" expanded="true" />
+            <element signature="e#13782#13783#0" expanded="true" />
+            <element signature="e#13861#13862#0" expanded="true" />
           </folding>
         </state>
       </provider>
