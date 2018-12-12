@@ -180,20 +180,45 @@ public  class Person
         isFriendsHidden = friendsHidden;
     }
 
-    public void addfriend(Person person) {
+    public int addfriend(Person person) {
         if (person != null) {
-            if (!friends.contains(person))
-                    friends.add(person);
+//            if (!friends.contains(person))
+//                    friends.add(person);
+
+            for (Person p : friends) {
+                if (p.getId().toString().equals(person.getId()))
+                    return 1;
+            }
+            friends.add(person);
+            return 0;
         }
+        return 1;
     }
 
-    public void removeFriend(Person person) {
-        if (person != null)
-            friends.remove(person);
-//        for (Person p : friends) {
-//            if (p.getId().equals(person.getId()))
-//                friends.remove(person);
-//        }
+
+    public int removeFriend(Person person) {
+        if (person != null) {
+
+//            friends.remove(person);
+            for (Person p : friends) {
+                if (p.getId().toString().equals(person.getId())) {
+                    friends.remove(p);
+                    return 0;
+                }
+            }
+            return 1;
+        }
+        return 1;
+    }
+
+    public void addPost(Post p) {
+        if (p != null)
+            posts.add(p);
+    }
+
+    public void removePost(Post p) {
+        if (p != null)
+            posts.remove(p);
     }
 }
 

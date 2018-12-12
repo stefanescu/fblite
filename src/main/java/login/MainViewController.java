@@ -1,5 +1,8 @@
 package login;
 
+import animation.animation.AnimationType;
+import animation.control.cell.AnimatedListCell;
+import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.*;
@@ -9,8 +12,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import login.DAO.PersonDAO;
 import login.models.Person;
+import login.models.Post;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.query.Query;
+import prettyParts.PrettyListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,14 +32,18 @@ public class MainViewController {
     @FXML private Label fullNameText;
     @FXML private Label userText;
     @FXML private Label dobText;
+    @FXML private Label friendsLabel;
     @FXML private TextArea statusText;
     @FXML private ListView friendsList;
+    @FXML private ListView postList;
     @FXML private Button homeButton;
     @FXML private Button logoutButton;
     @FXML private Button editStatus;
     @FXML private Button optionsButton;
     @FXML private TextField addFriendText;
     @FXML private Button addFriendButton;
+    @FXML private Button removeFriendButton;
+    @FXML private Button addPostButton;
 
 
 
@@ -48,11 +57,47 @@ public class MainViewController {
         addFriendText.setPromptText("add friend by username");
         setUpOnClick();
 
+
+//        friendsList = new PrettyListView<String>();
+//        friendsList.setCellFactory(AnimatedListCell.forListView(AnimationType.ROTATE_RIGHT, AnimationType.FLATTERN_OUT));
+//
+//        friendsList.setCellFactory(lv -> {
+//
+//            ListCell<String> cell = new ListCell<>();
+//
+//            ContextMenu contextMenu = new ContextMenu();
+//
+//
+////            MenuItem editItem = new MenuItem();
+////            editItem.textProperty().bind(Bindings.format("Edit \"%s\"", cell.itemProperty()));
+////            editItem.setOnAction(event -> {
+////                String item = cell.getItem();
+////                // code to edit item...
+////            });
+//            MenuItem deleteItem = new MenuItem();
+//            deleteItem.textProperty().bind(Bindings.format("Remove friend"));
+//            deleteItem.setOnAction(event -> removeFriend());
+//            contextMenu.getItems().add(deleteItem);
+//
+//            cell.textProperty().bind(cell.itemProperty());
+//
+//            cell.emptyProperty().addListener((obs, wasEmpty, isNowEmpty) -> {
+//                if (isNowEmpty) {
+//                    cell.setContextMenu(null);
+//                } else {
+//                    cell.setContextMenu(contextMenu);
+//                }
+//            });
+//            return cell ;
+//        });
 //        friendsList.setItems(currentProfile.getFriends());
 
     }
 
 
+    private void onAddPostClick() {
+
+    }
     private void setUpOnClick() {
 
         addFriendButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -68,17 +113,83 @@ public class MainViewController {
                 }
 
                 Person newFriend = p.get(0);
-                currentProfile.addfriend(newFriend);
+                if (currentProfile.addfriend(newFriend) == 0) {
+                    newFriend.addfriend(currentProfile);
 
-                newFriend.addfriend(currentProfile);
+                    personDAO.save(currentProfile);
+                    personDAO.save(newFriend);
 
+                    friendsList.getItems().add(newFriend.getFirstName() + " " + newFriend.getLastName());
+
+                    Util.showInfoDialog("Friend Added!");
+                }
+                else
+                    Util.showInfoDialog(newFriend.getFirstName() + newFriend.getLastName() + " is already your friend!");
+
+            }
+        });
+
+        addPostButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent event) {
+                final Query<Person> query = personDAO.getDatastore().createQuery(Person.class);
+                final List<Person> persons = query.asList();
+
+                TextInputDialog dialog = new TextInputDialog();
+                dialog.setTitle("Add new post");
+                dialog.setHeaderText(null);
+                dialog.setContentText("New post:");
+
+
+                Optional<String> result = dialog.showAndWait();
+
+//                result.ifPresent(content -> currentProfile.addPost(new Post("%s said..".format(currentProfile.getFirstName()) , content));
+                result.ifPresent(content -> processNewPost(content));
 
                 personDAO.save(currentProfile);
-                personDAO.save(newFriend);
 
-                friendsList.getItems().add(newFriend.getFirstName() + " " + newFriend.getLastName());
+//                List<Person> p = conn.getDatastore().createQuery(Person.class).field("username").equal(addFriendText.getText()).asList();
 
-                Util.showInfoDialog("Friend Added!");
+//                if (p.isEmpty()) {
+//                    Util.showErrorDialog("Username not found!");
+//                    return;
+//                }
+
+//                Person newFriend = p.get(0);
+//                currentProfile.addfriend(newFriend);
+//
+//                newFriend.addfriend(currentProfile);
+//
+//
+//                personDAO.save(currentProfile);
+//                personDAO.save(newFriend);
+//
+//                friendsList.getItems().add(newFriend.getFirstName() + " " + newFriend.getLastName());
+//
+//                Util.showInfoDialog("Friend Added!");
+            }
+        });
+        removeFriendButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Remove friend");
+                alert.setHeaderText("You're about to remove this friend. Continue?");
+                alert.setContentText(null);
+
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.get() == ButtonType.OK){
+                    Person you = personDAO.get(new ObjectId(sessionID));
+
+                    if (you.removeFriend(currentProfile) == 0 ) { //success
+                        currentProfile.removeFriend(you);
+                        you.removeFriend(currentProfile);
+                        personDAO.save(currentProfile);
+                        personDAO.save(you);
+
+                        homeButton.fire();
+                    }
+                }
             }
         });
 
@@ -190,6 +301,13 @@ public class MainViewController {
 
     }
 
+    private void processNewPost(String content) {
+
+        Post newP = new Post("%s said..".format(currentProfile.getFirstName()) , content);
+        postList.getItems().add(newP.getTitle() + "\n" + newP.getContent());
+        currentProfile.addPost(newP);
+    }
+
     public void initSessionID(final SceneManager sceneManager, String sessionID, String newSessionId) {
 //        sessionLabel.setText(sessionID);
         this.sessionID = sessionID;
@@ -198,6 +316,7 @@ public class MainViewController {
         else
             currentProfile = personDAO.get(new ObjectId(newSessionId));
 
+        removeFriendButton.setVisible(false);
         fullNameText.setText(currentProfile.getFirstName() + " " + currentProfile.getLastName());
         userText.setText(currentProfile.getUsername());
         dobText.setText(currentProfile.getDob());
@@ -208,6 +327,10 @@ public class MainViewController {
             friendsList.getItems().add(p.getFirstName() + " " + p.getLastName());
         }
 
+        ArrayList<Post> p = currentProfile.getPosts();
+        for (Post pp : p) {
+            postList.getItems().add(pp.getContent());
+        }
 
         logoutButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent event) {
@@ -245,5 +368,13 @@ public class MainViewController {
         });
 
 
+        if (!currentProfile.getId().equals(sessionID)) {
+            removeFriendButton.setVisible(true);
+            logoutButton.setVisible(false);
+            editStatus.setVisible(false);
+            addFriendText.setVisible(false);
+            addFriendButton.setVisible(false);
+            addPostButton.setVisible(false);
+        }
     }
 }

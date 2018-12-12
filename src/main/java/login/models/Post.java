@@ -9,6 +9,9 @@ import org.mongodb.morphia.annotations.Id;
 @Entity
 public class Post {
 
+    public Post() {
+    }
+
     @Id
     private ObjectId id;
     private String title;

@@ -3,8 +3,16 @@
     -fx-text-fill: white;
 }
 
+.list-cell {
+    -fx-border-radius: 10px;
+    -fx-border-color: black;
+    -fx-border-insets: 10px;
+    -fx-text-alignment: center;
+}
+
 .list-cell:even { /* <=== changed to even */
     -fx-background-color: white;
+
 }
 
 .list-cell:filled:hover {
